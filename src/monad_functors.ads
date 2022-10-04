@@ -14,6 +14,12 @@ package Monad_Functors is
    type Reader_Function is not null access function
      (M : Monad_Element) return Element;
 
+   function Write(E : Element) return Monad_Element;
+
+   function Read(M : Monad_Element) return Element;
+
+   function Read return Element;
+
    type Monad_Record is record
       E    : Element;
       EMin : Element;
@@ -21,17 +27,11 @@ package Monad_Functors is
       M    : Monad_Element;
       MMin : Monad_Element;
       MMax : Monad_Element;
-      F    : Writer_Function;
-      R    : Reader_Function;
+      F    : Writer_Function := Write'Access;
+      R    : Reader_Function := Read'Access;
    end record;
 
    type Monad_Record_Ptr is access Monad_Record;
-
-   function Write(E : Element) return Monad_Element;
-
-   function Read(M : Monad_Element) return Element;
-
-   function Read return Element;
 
    task type Element_Wrapper (MRP : not null Monad_Record_Ptr) is
       entry Init
