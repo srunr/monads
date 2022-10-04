@@ -135,3 +135,17 @@ begin
    -- Copy_Monad_Record_Ptr.MMax := Float (Check_Float'Last);
 
 end Monads;
+
+-- Build and run results in:
+-- C:\Users\soren\OneDrive\ada2012\monads\obj\monads.exe
+-- Running : monads.adb : at Line :  118 : Compiled at : Oct 04 2022
+--  120 Monads beginning
+-- monad_functors.adb 56 Unit A =  1
+-- monads.adb 125 Monad_Unit(1) = (access 1071420)
+-- monad_functors.adb 65 Bind E =  1
+-- monad_functors.adb 69 Write'Image = (access subprogram 6cfc21)
+-- monad_functors.adb 76 Read'Image = (access subprogram 6cfc11)
+-- monad_functors.adb 84 M =  1.00000E+00
+-- monad_functors.adb 109 Bind with M and E =  1.00000E+00
+-- monads.adb 129 Monad_Get_E =  1
+-- [2022-10-04 15:27:23] process terminated successfully, elapsed time: 00.15s
